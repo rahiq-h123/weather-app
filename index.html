@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.png">
+            <img src="img/Weather app.png">
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-bar" class="search-bar" placeholder="Search for cities">
+            <div class="results-container" id="results-container">
+            </div>
+        </div>
+
+        <div class="F-or-C" id="tempSwitch">
+            <div class="option" data-unit="c">°C</div>
+            <div class="option chosen" data-unit="f">°F</div>
+        </div>
+    </header>
+
+    <section class="app-body">
+        <div class="body-left-side">
+            <div class="temp-view">
+                <div class="left-side">
+                    <div class="date" id="date">2nd Feb, Friday</div>
+                    <div class="location" id="location">Madrid</div>
+                    <div class="temp" id="temp">16°/-1°</div>
+                </div>
+                <div class="right-side">
+                    <img id="tempPic" src="">
+                </div>
+            </div>
+            <div class="today-forcast">
+                <p class="opacity-60 title">Today's Forcast</p>
+                <div class="hourly-temp">
+                    <div class="hour-temp">
+                        <p class="opacity-60 hour">6:00 AM</p>
+                        <img class="hourIcon" src="img/02d.png">
+                        <p class="degree hourDeg">10°</p>
+                    </div>
+                    <div class="hour-temp">
+                        <p class="opacity-60 hour">6:00 AM</p>
+                        <img class="hourIcon" src="img/02d.png">
+                        <p class="degree hourDeg">10°</p>
+                    </div>
+                    <div class="hour-temp">
+                        <p class="opacity-60 hour">6:00 AM</p>
+                        <img class="hourIcon" src="img/02d.png">
+                        <p class="degree hourDeg">10°</p>
+                    </div>
+                    <div class="hour-temp">
+                        <p class="opacity-60 hour">6:00 AM</p>
+                        <img class="hourIcon" src="img/02d.png">
+                        <p class="degree hourDeg">10°</p>
+                    </div>
+                    <div class="hour-temp">
+                        <p class="opacity-60 hour">6:00 AM</p>
+                        <img class="hourIcon" src="img/02d.png">
+                        <p class="degree hourDeg">10°</p>
+                    </div>
+                    <div class="hour-temp">
+                        <p class="opacity-60 hour">6:00 AM</p>
+                        <img class="hourIcon" src="img/02d.png">
+                        <p class="degree hourDeg">10°</p>
+                    </div>
+                    <div class="hour-temp">
+                        <p class="opacity-60 hour">6:00 AM</p>
+                        <img class="hourIcon" src="img/02d.png">
+                        <p class="degree hourDeg">10°</p>
+                    </div>
+                    <div class="hour-temp">
+                        <p class="opacity-60 hour">6:00 AM</p>
+                        <img class="hourIcon" src="img/02d.png">
+                        <p class="degree hourDeg">10°</p>
+                    </div>
+                    <div class="hour-temp">
+                        <p class="opacity-60 hour">6:00 AM</p>
+                        <img class="hourIcon" src="img/02d.png">
+                        <p class="degree hourDeg">10°</p>
+                    </div>
+                    <div class="hour-temp">
+                        <p class="opacity-60 hour">6:00 AM</p>
+                        <img class="hourIcon" src="img/02d.png">
+                        <p class="degree hourDeg">10°</p>
+                    </div>
+                    <div class="hour-temp">
+                        <p class="opacity-60 hour">6:00 AM</p>
+                        <img class="hourIcon" src="img/02d.png">
+                        <p class="degree hourDeg">10°</p>
+                    </div>
+                    <div class="hour-temp">
+                        <p class="opacity-60 hour">6:00 AM</p>
+                        <img class="hourIcon" src="img/02d.png">
+                        <p class="degree hourDeg">10°</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="weather-details">
+                <p class="opacity-60 title">Weather Details</p>
+                <div class="weather-details-cards">
+                    <div class="weather-details-card">
+                        <div class="text">
+                            <p class="opacity-60">Sunrise</p>
+                            <p class="data" id="sunrise">8:18 am</p>
+                        </div> 
+                        <img src="img/mingcute_sunrise-line.png"> 
+                    </div>
+                    <div class="weather-details-card">
+                        <div class="text">
+                            <p class="opacity-60" >Sunset</p>
+                            <p class="data" id="sunset">06:40 pm</p>
+                        </div> 
+                        <img src="img/mingcute_sunrise-line.png"> 
+                    </div>
+                    <div class="weather-details-card">
+                        <div class="text">
+                            <p class="opacity-60">Chance of rain </p>
+                            <p class="data" id="rainChance">72%</p>
+                        </div> 
+                        <img src="img/material-symbols_water-drop.png"> 
+                    </div>
+                    <div class="weather-details-card">
+                        <div class="text">
+                            <p class="opacity-60">Wind</p>
+                            <p class="data" id="wind">8 km/h</p>
+                        </div> 
+                        <img src="img/tabler_wind.png"> 
+                    </div>
+                    <div class="weather-details-card">
+                        <div class="text">
+                            <p class="opacity-60">UV index</p>
+                            <p class="data" id="uv">2 of 10</p>
+                        </div> 
+                        <img src="img/mingcute_sun-fill.png"> 
+                    </div>
+                    <div class="weather-details-card">
+                        <div class="text">
+                            <p class="opacity-60">Feels like</p>
+                            <p class="data" id="feelsLike">12°</p>
+                        </div> 
+                        <img src="img/fluent_temperature-16-filled.png"> 
+                    </div>
+                   
+                </div>
+                
+            </div>
+        </div>
+        <aside class="body-right-side">
+                <p class="aside-title opacity-60">7 days forecast</p>
+
+                <div class="aside-item">
+                    <div class="aside-time">
+                        <div class="opacity-60 day-date">3rd Febuary</div>
+                        <div class="aside-data day-name">Saturday</div>
+                    </div>
+                    <div class="aside-status">
+                        <img class="day-icon" src="img/02d.png">
+                        <div class="opacity-60 day-description">Partly Cloudy</div>
+                    </div>
+                    <div class="aside-temp opacity-60 day-max-temp">10°/1°</div>
+                </div>
+                <div class="aside-item">
+                    <div class="aside-time">
+                        <div class="opacity-60 day-date">3rd Febuary</div>
+                        <div class="aside-data day-name">Saturday</div>
+                    </div>
+                    <div class="aside-status">
+                        <img class="day-icon" src="img/02d.png">
+                        <div class="opacity-60 day-description">Partly Cloudy</div>
+                    </div>
+                    <div class="aside-temp opacity-60 day-max-temp">10°/1°</div>
+                </div>
+                <div class="aside-item">
+                    <div class="aside-time">
+                        <div class="opacity-60 day-date">3rd Febuary</div>
+                        <div class="aside-data day-name">Saturday</div>
+                    </div>
+                    <div class="aside-status">
+                        <img class="day-icon" src="img/02d.png">
+                        <div class="opacity-60 day-description">Partly Cloudy</div>
+                    </div>
+                    <div class="aside-temp opacity-60 day-max-temp">10°/1°</div>
+                </div>
+                <div class="aside-item">
+                    <div class="aside-time">
+                        <div class="opacity-60 day-date">3rd Febuary</div>
+                        <div class="aside-data day-name">Saturday</div>
+                    </div>
+                    <div class="aside-status">
+                        <img class="day-icon" src="img/02d.png">
+                        <div class="opacity-60 day-description">Partly Cloudy</div>
+                    </div>
+                    <div class="aside-temp opacity-60 day-max-temp">10°/1°</div>
+                </div>
+                <div class="aside-item">
+                    <div class="aside-time">
+                        <div class="opacity-60 day-date">3rd Febuary</div>
+                        <div class="aside-data day-name">Saturday</div>
+                    </div>
+                    <div class="aside-status">
+                        <img class="day-icon" src="img/02d.png">
+                        <div class="opacity-60 day-description">Partly Cloudy</div>
+                    </div>
+                    <div class="aside-temp opacity-60 day-max-temp">10°/1°</div>
+                </div>
+                <div class="aside-item">
+                    <div class="aside-time">
+                        <div class="opacity-60 day-date">3rd Febuary</div>
+                        <div class="aside-data day-name">Saturday</div>
+                    </div>
+                    <div class="aside-status">
+                        <img class="day-icon" src="img/02d.png">
+                        <div class="opacity-60 day-description">Partly Cloudy</div>
+                    </div>
+                    <div class="aside-temp opacity-60 day-max-temp">10°/1°</div>
+                </div>
+                <div class="aside-item">
+                    <div class="aside-time">
+                        <div class="opacity-60 day-date">3rd Febuary</div>
+                        <div class="aside-data day-name">Saturday</div>
+                    </div>
+                    <div class="aside-status">
+                        <img class="day-icon" src="img/02d.png">
+                        <div class="opacity-60 day-description">Partly Cloudy</div>
+                    </div>
+                    <div class="aside-temp opacity-60 day-max-temp">10°/1°</div>
+                </div>
+                
+            </aside>
+            <div id="error-box" class="error-box hidden">
+                <span id="error-msg">Something went wrong, please try again.</span>
+              </div>
+        
+    </section>
+    
+    <div class="lazyLoader">
+        <div class="rs">
+            <div class="c2">
+                <div class="c1">
+                    <div class="t1"> </div>
+                    <div class="t2"> </div>
+                    <div class="t3"> </div>
+                </div>
+                <div class="im"></div>
+            </div>
+            <div class="c3">
+                <div class="t1"></div>
+                <div class="cards">
+                    <div class="card">
+                        <div class="t4"></div>
+                        <div class="i"></div>
+                        <div class="t5"></div>
+                    </div>
+                    <div class="card">
+                        <div class="t4"></div>
+                        <div class="i"></div>
+                        <div class="t5"></div>
+                    </div>
+                    <div class="card">
+                        <div class="t4"></div>
+                        <div class="i"></div>
+                        <div class="t5"></div>
+                    </div>
+                    <div class="card">
+                        <div class="t4"></div>
+                        <div class="i"></div>
+                        <div class="t5"></div>
+                    </div>
+                    <div class="card">
+                        <div class="t4"></div>
+                        <div class="i"></div>
+                        <div class="t5"></div>
+                    </div>
+                    <div class="card">
+                        <div class="t4"></div>
+                        <div class="i"></div>
+                        <div class="t5"></div>
+                    </div>
+                    <div class="card">
+                        <div class="t4"></div>
+                        <div class="i"></div>
+                        <div class="t5"></div>
+                    </div>
+                    <div class="card">
+                        <div class="t4"></div>
+                        <div class="i"></div>
+                        <div class="t5"></div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="c4">
+                <div class="t1"></div>
+                <div class="cards2">
+                    <div class="card2">
+                        <div class="c5">
+                            <div class="t4"></div>
+                            <div class="t5"></div>
+                        </div>
+                        <div class="i"></div>
+                    </div>
+                    <div class="card2">
+                        <div class="c5">
+                            <div class="t4"></div>
+                            <div class="t5"></div>
+                        </div>
+                        <div class="i"></div>
+                    </div>
+                    <div class="card2">
+                        <div class="c5">
+                            <div class="t4"></div>
+                            <div class="t5"></div>
+                        </div>
+                        <div class="i"></div>
+                    </div>
+                    <div class="card2">
+                        <div class="c5">
+                            <div class="t4"></div>
+                            <div class="t5"></div>
+                        </div>
+                        <div class="i"></div>
+                    </div>
+                    <div class="card2">
+                        <div class="c5">
+                            <div class="t4"></div>
+                            <div class="t5"></div>
+                        </div>
+                        <div class="i"></div>
+                    </div>
+                    <div class="card2">
+                        <div class="c5">
+                            <div class="t4"></div>
+                            <div class="t5"></div>
+                        </div>
+                        <div class="i"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        <div class="ls">
+            <div class="t1"></div>
+            <div class="c6">
+                <div class="c7">
+                    <div class="c5">
+                        <div class="t4"></div>
+                        <div class="t5"></div>
+                    </div>
+                    <div class="c8">
+                        <div class="i"></div>
+                        <div class="t4"></div>
+                    </div>
+                    <div class="t5"></div>
+                </div>
+            </div>
+            <div class="c6">
+                <div class="c7">
+                    <div class="c5">
+                        <div class="t4"></div>
+                        <div class="t5"></div>
+                    </div>
+                    <div class="c8">
+                        <div class="i"></div>
+                        <div class="t4"></div>
+                    </div>
+                    <div class="t5"></div>
+                </div>
+            </div>
+            <div class="c6">
+                <div class="c7">
+                    <div class="c5">
+                        <div class="t4"></div>
+                        <div class="t5"></div>
+                    </div>
+                    <div class="c8">
+                        <div class="i"></div>
+                        <div class="t4"></div>
+                    </div>
+                    <div class="t5"></div>
+                </div>
+            </div>
+            <div class="c6">
+                <div class="c7">
+                    <div class="c5">
+                        <div class="t4"></div>
+                        <div class="t5"></div>
+                    </div>
+                    <div class="c8">
+                        <div class="i"></div>
+                        <div class="t4"></div>
+                    </div>
+                    <div class="t5"></div>
+                </div>
+            </div>
+            <div class="c6">
+                <div class="c7">
+                    <div class="c5">
+                        <div class="t4"></div>
+                        <div class="t5"></div>
+                    </div>
+                    <div class="c8">
+                        <div class="i"></div>
+                        <div class="t4"></div>
+                    </div>
+                    <div class="t5"></div>
+                </div>
+            </div>
+            <div class="c6">
+                <div class="c7">
+                    <div class="c5">
+                        <div class="t4"></div>
+                        <div class="t5"></div>
+                    </div>
+                    <div class="c8">
+                        <div class="i"></div>
+                        <div class="t4"></div>
+                    </div>
+                    <div class="t5"></div>
+                </div>
+            </div>
+            <div class="c6">
+                <div class="c7">
+                    <div class="c5">
+                        <div class="t4"></div>
+                        <div class="t5"></div>
+                    </div>
+                    <div class="c8">
+                        <div class="i"></div>
+                        <div class="t4"></div>
+                    </div>
+                    <div class="t5"></div>
+                </div>
+            </div>
+            
+        </div>
+       
+        
+
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
